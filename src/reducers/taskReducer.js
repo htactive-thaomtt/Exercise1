@@ -1,6 +1,7 @@
 const initialState = [
   { title: "demo", tasks: [{ task: "nono" }, { task: "hihih" }] },
 ];
+
 const taskReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_CARD": {
@@ -47,11 +48,11 @@ const taskReducer = (state = initialState, action) => {
       });
       return newmove;
     }
-    case 'REMOVE_CARD': {
+    case "REMOVE_CARD": {
       const removeCard = [...state];
       removeCard.splice(action.payload, 1);
       return removeCard;
-      }
+    }
     default:
       return state;
   }
